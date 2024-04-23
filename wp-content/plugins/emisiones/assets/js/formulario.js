@@ -1,12 +1,15 @@
 "use strict";
 $(function () {
-
+    $('#metano_enterica').maskNumber({
+      decimal:',',
+      thousands:'.'
+    });
     //metano_enterica
     //metano_excretas
     //N20_excretas
     //N20_pasturas
 
-   
+
     $("#metano_enterica").on("change", function () {
 
         let metano_enterica = parseFloat($("#metano_enterica").val());

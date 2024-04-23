@@ -11,6 +11,9 @@
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!--mascara de numeros
+        <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>-->
+
         <script>
                 var ApiUrl = <?php echo json_encode(get_site_url()); ?>;
                 console.log(ApiUrl);
