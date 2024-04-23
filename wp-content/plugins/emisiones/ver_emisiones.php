@@ -15,18 +15,25 @@
         .fila1 {
             background-color: #EBF5FB;
             margin-left: 10px;
+            text-align: center;
         }
 
         .fila2 {
             background-color: #F4ECF7;
             margin-top: 10px;
             margin-left: 10px;
+            text-align: center;
         }
 
         .fila3 {
             background-color: #EBF5FB;
             margin-top: 10px;
             margin-left: 10px;
+            text-align: center;
+        }
+      
+        p{
+            text-align: center;
         }
     </style>
     </style>
@@ -70,7 +77,7 @@
                 </p>
             </div>
             <div class="col fila1">
-                <label for=""><strong>Provincia</strong></label>
+                <label for="" style="text-align: center"><strong>Provincia</strong></label>
                 <p>
                     <?php echo $emision['provincia'] ?>
                 </p>
@@ -82,7 +89,9 @@
                 </p>
             </div>
             <div class="col fila1">
-                <label for=""><strong>Metano Fermentación Entérica / t CO2eq</strong></label>
+                <label for=""><strong>Metano Fermentación Entérica</strong></label>
+                <br>
+                <label for=""><strong>t CO2eq</strong></label>
                 <p>
                     <?php echo number_format($emision['metano_enterica'], 2, ',', '.') ?>
                 </p>
@@ -90,25 +99,33 @@
         </div>
         <div class="row">
             <div class="col fila2">
-                <label for=""><strong>Metano Manejo Excretas / t CO2eq</strong></label>
+                <label for=""><strong>Metano Manejo Excretas</strong></label>
+                <br>
+                <label for=""><strong>t CO2eq</strong></label>
                 <p>
                     <?php echo number_format($emision['metano_excretas'], 2, ',', '.') ?>
                 </p>
             </div>
             <div class="col fila2">
-                <label for=""><strong>N2O Manejo Excretas / t CO2eq</strong></label>
+                <label for=""><strong>N2O Manejo Excretas</strong></label>
+                <br>
+                <label for=""><strong>t CO2eq</strong></label>
                 <p>
                     <?php echo number_format($emision['N2O_excretas'], 2, ',', '.') ?>
                 </p>
             </div>
             <div class="col fila2">
-                <label for=""><strong>N2O Excretas en Pasturas / t CO2eq </strong></label>
+                <label for=""><strong>N2O Excretas en Pasturas</strong></label>
+                <br>
+                <label for=""><strong>t CO2eq</strong></label>
                 <p>
                     <?php echo number_format($emision['N2O_pasturas'], 2, ',', '.') ?>
                 </p>
             </div>
             <div class="col fila2">
-                <label for=""><strong>Total Emisiones / t CO2eq</strong></label>
+                <label for=""><strong>Total Emisiones</strong></label>
+                <br>
+                <label for=""><strong>t CO2eq</strong></label>
                 <p>
                     <?php echo number_format($emision['total_emisiones'], 2, ',', '.') ?>
                 </p>
@@ -116,25 +133,33 @@
         </div>
         <div class="row">
             <div class="col fila3">
-                <label for=""><strong>Leche / l/año</strong></label>
+                <label for=""><strong>Leche </strong></label>
+                <br>
+                <label for=""><strong>l/año</strong></label>
                 <p>
                     <?php echo number_format($emision['leche'], 2, ',', '.') ?>
                 </p>
             </div>
             <div class="col fila3">
-                <label for=""><strong>Carne / kg canal/año</strong></label>
+                <label for=""><strong>Carne</strong></label>
+                <br>
+                <label for=""><strong>kg canal/año</strong></label>
                 <p>
                     <?php echo number_format($emision['carne'], 2, ',', '.') ?>
                 </p>
             </div>
             <div class="col fila3">
-                <label for=""><strong>IE Leche / kg CO2eq/l</strong></label>
+                <label for=""><strong>Intensidad de Leche </strong></label>
+                <br>
+                <label for=""><strong>kg CO2eq/l</strong></label>
                 <p>
                     <?php echo number_format($emision['IE_leche'], 2, ',', '.') ?>
                 </p>
             </div>
             <div class="col fila3">
-                <label for=""><strong>IE Carne / kg CO2eq/kg canal</strong></label>
+                <label for=""><strong>Intensidad de Carne</strong></label>
+                <br>
+                <label for=""><strong>kg CO2eq/kg canal</strong></label>
                 <p>
                     <?php echo number_format($emision['IE_carne'], 2, ',', '.') ?>
                 </p>

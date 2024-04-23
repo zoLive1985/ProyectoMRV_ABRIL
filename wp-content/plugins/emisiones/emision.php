@@ -21,8 +21,10 @@ function incluir_emisiones()
         include $ruta_archivo;
         wp_register_script('formulario_js', plugin_dir_url(__FILE__) . 'assets/js/formulario.js', array('jquery'), '1.0', true);
         wp_enqueue_script('formulario_js');
-        wp_register_script('mascara_numeros_js', plugin_dir_path(__FILE__) . 'assets/js/jquery.masknumber.js', array('jquery'), '1.0',true);
+     /*    wp_register_script('mascara_numeros_js', plugin_dir_url(__FILE__) . 'assets/js/jquery.masknumber.js', array('jquery'), '1.0',true);
         wp_enqueue_script('mascara_numeros_js');
+        wp_register_script('mascara_min_js', plugin_dir_url(__FILE__) . 'assets/js/jquery.masknumber.min.js', array('jquery'),'1.0',true);
+        wp_enqueue_script('mascara_min_js'); */
 
     }
 }
