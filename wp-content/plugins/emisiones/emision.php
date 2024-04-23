@@ -308,7 +308,7 @@ function searchConsolidar($request)
     if (count($where) > 0) {
         $condicion = implode(" AND ", $where);
     }
-    $sql = "SELECT finca, metano_enterica,metano_excretas,N2O_excretas,N2O_pasturas,total_emisiones,  estado FROM $tabla_nombre";
+    $sql = "SELECT finca,anio,metano_enterica,metano_excretas,N2O_excretas,N2O_pasturas,total_emisiones,  estado FROM $tabla_nombre";
     if (strlen($condicion) > 0) {
         $sql .= ' WHERE ' . $condicion;
     }

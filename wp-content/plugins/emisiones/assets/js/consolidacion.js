@@ -98,6 +98,7 @@ $(function () {
           res?.data?.forEach((emision) => {
             let fila = "<tr>";
             fila += `<td>${emision.finca}</td>`;
+            fila += `<td>${emision.anio}</td>`;
             fila += `<td>${emision.metano_enterica.replace(/\./g, ",")}</td>`;
             fila += `<td>${emision.metano_excretas.replace(/\./g, ",")}</td>`;
             fila += `<td>${emision.N2O_excretas.replace(/\./g, ",")}</td>`;
@@ -113,6 +114,7 @@ $(function () {
           });
           let sumaTotal = "<tr>";
           sumaTotal += `<td ><strong>Total</strong></td>`;
+          sumaTotal += `<td ><strong> </strong></td>`;  
           sumaTotal += `<td ><strong>${sumaMetanoEnterica.toFixed(2).replace(/\./g, ",")}</strong></td>`;
           sumaTotal += `<td ><strong>${sumaMetanoExcretas.toFixed(2).replace(/\./g, ",")}</strong></td>`;
           sumaTotal += `<td ><strong>${sumaN2OExcretas.toFixed(2).replace(/\./g, ",")}</strong></td>`;

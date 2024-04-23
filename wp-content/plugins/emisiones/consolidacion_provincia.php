@@ -16,7 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Consolidacion por Provincias y años</title>
-       
+
 </head>
 
 <body class="container-fluid">
@@ -118,12 +118,13 @@
             <thead>
                 <tr>
                     <th scope="col" style="text-align: center; vertical-align: middle;">Codigo Finca</th>
+                    <th scope="col" style="text-align: center; vertical-align: middle;">Año</th>
                     <th scope="col" style="text-align: center; vertical-align: middle;">Metano Fermentación Entérica
                         <div>
                             <p>tCO2 eq</p>
                         </div>
                     </th>
-                    <th scope="col" style="text-align: center; vertical-align: middle;">Metano Manejo Excretas 
+                    <th scope="col" style="text-align: center; vertical-align: middle;">Metano Manejo Excretas
                         <div>
                             <p>tCO2 eq</p>
                         </div>
@@ -134,14 +135,17 @@
                         </div>
                     </th>
                     <th scope="col" style="text-align: center; vertical-align: middle;">N2O Excretas en Pasturas
-                            <p>tCO2 eq</p>
+                        <p>tCO2 eq</p>
                     </th>
-                    <th scope="col" style="text-align: center; vertical-align: middle;">Total de emisiones <div> t CO2eq</div></th>
+                    <th scope="col" style="text-align: center; vertical-align: middle;">Total de emisiones <div> t CO2eq
+                        </div>
+                    </th>
                 </tr>
             </thead>
             <tbody>
             <tfoot class="table-group-divider">
                 <tr>
+                    <td style="border:none;"></td>
                     <td style="border:none;"></td>
                     <td style="border:none;"></td>
                     <td style="border:none;"></td>
@@ -168,6 +172,10 @@
                 </div>
             </form>
         </div>
+    </div>
+
+    <div class="form-group row mt-3">
+        <button class="btn btn-primary d-grid gap-2 col-3 mx-aut" type="button" id="consolidar" name="submit">Consolidar</button>
     </div>
 </body>
 
