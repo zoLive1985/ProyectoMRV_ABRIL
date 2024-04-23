@@ -15,6 +15,7 @@
         .fila1 {
             background-color: #EBF5FB;
             margin-left: 10px;
+       
         }
 
         .fila2 {
@@ -27,6 +28,9 @@
             background-color: #EBF5FB;
             margin-top: 10px;
             margin-left: 10px;
+        }
+        p{
+            text-align: justify;
         }
     </style>
 </head>
