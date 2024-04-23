@@ -1,0 +1,30 @@
+Reunión Deysy Cardenas.
+MRV Agricultura.
+25 de marzo 2022. 14h00 MAATE.
+
+Título de la página:
+"Sistema de Medición, Reporte y Verificación para la Contribución Determinada a nivel Nacional (NDC) en el Sector Agricultura." (Sistema MRV para la NDC en el Sector Agricultura)
+
+Subtítulo:
+BIENVENIDOS.
+Texto explicativo: detalle de lo que es el sistema, información de lo que es la NDC. 
+
+Bienvenido al Sistema....(en siglas)
+
+Sección Logos: una persona con una vaca atrás en una chakra para que se entienda que es Pecuario y Agrícola.
+El botón debe irse a una pantalla donde se diga: Sector Pecuario y Agrícola. El Agrícola en construcción y el Pecuario a la pantalla para jalar los datos de GLEAM.
+
+
+Primera NDC:
+Lo importante es mostrar la descripción de la primera NDC, con información del PI, si es o no nacional. Gráficos. Al final hypervincular.
+Las líneas de acción y las tres iniciativas y la parte de escenarios. 
+La cuantificación de cada una de las iniciativas.
+
+Nuevas iniciativas: mover del menú principal al final de la primera NDC.
+
+VErificación:
+Se tiene que tener la división pecuario, agrícola. En la parte pecuaria se deberá acceder a un icono sobre GLEAMEC pero más herramientas que vengan a futuro.
+
+
+
+En la Primera NDC se debe mostrar la información del documento donde habla del escenario 

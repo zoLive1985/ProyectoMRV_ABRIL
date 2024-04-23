@@ -1,0 +1,10 @@
+<!--  -->
+<div class="wfu-releasenotes-container">
+	<span><strong>Version 4.24.6</strong> is a regular update that fixes a bug in <strong>captcha</strong> feature of the plugin's upload form, where <strong>Google Recaptcha V2</strong> captcha was not working when <strong>Material UI</strong> theme was active. Furthermore, it includes a fix that prevents XSS attackes through <strong>uploadbutton</strong> attribute of the upload form.<br /><br />
+	Please note that since Version 4.24.0 the <strong>Professional</strong> version of the plugin introduces some significant changes, such as <strong>licensing</strong> and <strong>external extensions</strong>.
+	<br /><br />
+	For more details about this version's changes please visit the <strong>Release Notes</strong> of the plugin's </span>
+	<a href="http://www.iptanus.com/wordpress-plugins/wordpress-file-upload/">support page</a><span>.</span>
+</div>
+<!--  -->
+<!--  -->
