@@ -73,9 +73,11 @@
                             </div> -->
 
                         <div class="col ">
-                            <div class="card">
+                            <div class="card" id="cardvalidar">
                                 <div class="card-body" id="cpvalidar">
-                                    <h5 class="card-title">Validación por Finca</h5>
+                                    <div class="row" >
+                                        <h5 id="titulo">Validación por Finca</h5>
+                                    </div>
                                     <div class="row">
                                         <div class="col">
                                             <div class="form-floating mb-3">

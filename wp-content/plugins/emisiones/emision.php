@@ -23,10 +23,11 @@ function incluir_emisiones()
         wp_enqueue_script('formulario_js');
         wp_register_style('estilo', plugin_dir_url(__FILE__) . 'assets/css/estilo.css');
         wp_enqueue_style('estilo');
-     /*    wp_register_script('mascara_numeros_js', plugin_dir_url(__FILE__) . 'assets/js/jquery.masknumber.js', array('jquery'), '1.0',true);
+        //mascara para el ingreso de numeros
+        wp_register_script('mascara_numeros_js', plugin_dir_url(__FILE__) . 'assets/js/jquery.masknumber.js');
         wp_enqueue_script('mascara_numeros_js');
-        wp_register_script('mascara_min_js', plugin_dir_url(__FILE__) . 'assets/js/jquery.masknumber.min.js', array('jquery'),'1.0',true);
-        wp_enqueue_script('mascara_min_js'); */
+
+
 
     }
 }
@@ -88,7 +89,7 @@ function consolidar_emisiones()
         wp_enqueue_script('modelo_consolidar_js');
         wp_register_style('estilo', plugin_dir_url(__FILE__) . 'assets/css/estilo.css');
         wp_enqueue_style('estilo');
-        
+
 
     }
 }

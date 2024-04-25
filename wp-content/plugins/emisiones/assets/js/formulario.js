@@ -1,6 +1,6 @@
 "use strict";
 $(function () {
-    $('#metano_enterica').maskNumber({
+    $('#metano_enterica,#metano_excretas,#N20_excretas,#N20_pasturas').maskNumber({
       decimal:',',
       thousands:'.'
     });
@@ -11,7 +11,7 @@ $(function () {
 
 
     $("#metano_enterica").on("change", function () {
-
+        console.log("Metano enterica:",$(this).val());
         let metano_enterica = parseFloat($("#metano_enterica").val());
         let metano_excretas = parseFloat($("#metano_excretas").val());
         let N2O_excretas = parseFloat($("#N20_excretas").val());
