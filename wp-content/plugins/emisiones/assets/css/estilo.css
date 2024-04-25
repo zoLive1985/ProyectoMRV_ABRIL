@@ -1,0 +1,27 @@
+body{
+    font-family:'Roboto Mono'; 
+    font-style: normal;
+}
+.fila1 {
+    background-color: #EBF5FB;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.fila2 {
+    background-color: #F4ECF7;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.fila3 {
+    background-color: #EBF5FB;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}

@@ -1,4 +1,24 @@
-.filas{
-    background: cyan;
-    padding: 5px;
+body{
+     font-family:'Roboto Mono'; 
+     font-style: normal;
 }
+.fila1 {
+     background-color: #EBF5FB;
+     margin-left: 10px;
+
+ }
+
+ .fila2 {
+     background-color: #F4ECF7;
+     margin-top: 10px;
+     margin-left: 10px;
+ }
+
+ .fila3 {
+     background-color: #EBF5FB;
+     margin-top: 10px;
+     margin-left: 10px;
+ }
+ p{
+     text-align: justify;
+ }

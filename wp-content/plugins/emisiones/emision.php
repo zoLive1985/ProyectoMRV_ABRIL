@@ -21,6 +21,8 @@ function incluir_emisiones()
         include $ruta_archivo;
         wp_register_script('formulario_js', plugin_dir_url(__FILE__) . 'assets/js/formulario.js', array('jquery'), '1.0', true);
         wp_enqueue_script('formulario_js');
+        wp_register_style('estilo', plugin_dir_url(__FILE__) . 'assets/css/estilo.css');
+        wp_enqueue_style('estilo');
      /*    wp_register_script('mascara_numeros_js', plugin_dir_url(__FILE__) . 'assets/js/jquery.masknumber.js', array('jquery'), '1.0',true);
         wp_enqueue_script('mascara_numeros_js');
         wp_register_script('mascara_min_js', plugin_dir_url(__FILE__) . 'assets/js/jquery.masknumber.min.js', array('jquery'),'1.0',true);
@@ -37,6 +39,8 @@ function incluir_listado_emisiones()
         wp_register_script('listado_emisiones_js', plugin_dir_url(__FILE__) . 'assets/js/listado_emisiones.js', array('jquery'), '1.0', true);
         wp_enqueue_script('listado_emisiones_js');
         include $listado_visualizar;
+        wp_register_style('estilo', plugin_dir_url(__FILE__) . 'assets/css/estilo.css');
+        wp_enqueue_style('estilo');
     }
 }
 
@@ -47,6 +51,8 @@ function mostrar_emisiones()
     $ruta_archivo_ver_emisiones = plugin_dir_path(__FILE__) . 'ver_emisiones.php';
     if (file_exists($ruta_archivo_ver_emisiones)) {
         include $ruta_archivo_ver_emisiones;
+        wp_register_style('estilo', plugin_dir_url(__FILE__) . 'assets/css/estilo.css');
+        wp_enqueue_style('estilo');
     } else {
         echo "No existe el archivo";
     }
@@ -62,6 +68,8 @@ function editar_emisiones()
         include $ruta_archivo_editar;
         wp_register_script('formulario_editar_emi_js', plugin_dir_url(__FILE__) . 'assets/js/formulario_editar_emi.js', array('jquery'), '1.0', true);
         wp_enqueue_script('formulario_editar_emi_js');
+        wp_register_style('estilo', plugin_dir_url(__FILE__) . 'assets/css/estilo.css');
+        wp_enqueue_style('estilo');
     } else {
         echo "No existe el archivo";
     }
@@ -78,6 +86,9 @@ function consolidar_emisiones()
         include $ruta_archivo_consolidar;
         wp_register_script('modelo_consolidar_js', plugin_dir_url(__FILE__) . 'assets/js/consolidacion.js', array('jquery'), '1.0', true);
         wp_enqueue_script('modelo_consolidar_js');
+        wp_register_style('estilo', plugin_dir_url(__FILE__) . 'assets/css/estilo.css');
+        wp_enqueue_style('estilo');
+        
 
     }
 }

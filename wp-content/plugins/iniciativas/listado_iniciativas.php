@@ -14,8 +14,9 @@
     <!-- enlace para iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- estilos.css -->
-    <link rel="stylesheet" href="../../plugins/iniciativas/assets/css/estilo.css">
+    <!--  Estilo -->
+   
+
 </head>
 
 <body class="container-fluid mt-3">
@@ -31,8 +32,8 @@
             if ($perfil !== false) {
                 if ($perfil == 'innovacion') { ?>
                     <div class="d-grid gap-2 d-md-block">
-                        <a class="btn" href="http://localhost/esteveza/agregar-iniciativa/" role="button"
-                            id="agregar"><svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="green"
+                        <a class="btn" href="http://localhost/esteveza/agregar-iniciativa/" role="button" id="agregar"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="green"
                                 class="bi bi-clipboard-plus-fill" viewBox="0 0 16 16">
                                 <path
                                     d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />

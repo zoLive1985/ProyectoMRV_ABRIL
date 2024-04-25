@@ -11,32 +11,6 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <style>
-        .fila1 {
-            background-color: #EBF5FB;
-            margin-left: 10px;
-            text-align: center;
-        }
-
-        .fila2 {
-            background-color: #F4ECF7;
-            margin-top: 10px;
-            margin-left: 10px;
-            text-align: center;
-        }
-
-        .fila3 {
-            background-color: #EBF5FB;
-            margin-top: 10px;
-            margin-left: 10px;
-            text-align: center;
-        }
-      
-        p{
-            text-align: center;
-        }
-    </style>
-    </style>
 </head>
 
 <body class="container-fluid mt-3">

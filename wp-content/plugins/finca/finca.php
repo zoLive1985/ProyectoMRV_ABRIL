@@ -19,6 +19,8 @@ function incluir_formulario_fincas(){
         include $ruta_archivo;
         wp_register_script('formulario_js', plugin_dir_url(__FILE__) . 'assets/js/formulario.js', array('jquery'), '1.0', true);
         wp_enqueue_script('formulario_js');
+        wp_register_style('estilo', plugin_dir_url(__FILE__) . 'css/estilo.css');
+        wp_enqueue_style('estilo');
     }
 }
 add_shortcode('formulario_guardar_fincas', 'incluir_formulario_fincas');
@@ -30,7 +32,9 @@ function incluir_listado_fincas()
         wp_register_script('listado_finca_js', plugin_dir_url(__FILE__) . 'assets/js/listado_fincas.js', array('jquery'), '1.0', true);
         wp_enqueue_script('listado_finca_js');
         include $listado_visualizar;
-      
+        wp_register_style('estilo', plugin_dir_url(__FILE__) . 'css/estilo.css');
+        wp_enqueue_style('estilo');
+    
        
     }
 
@@ -44,6 +48,8 @@ function mostrar_finca(){
         include $ruta_archivo_ver_finca;
         wp_register_script('ver_fincas', plugin_dir_url(__FILE__) . 'assets/js/ver_fincas.js', array('jquery'), '1.0', true);
         wp_enqueue_script('ver_fincas');
+        wp_register_style('estilo', plugin_dir_url(__FILE__) . 'css/estilo.css');
+        wp_enqueue_style('estilo');
     } else {
         echo "No existe el archivo";
     }
@@ -60,6 +66,8 @@ function editar_finca(){
         // Agregamos los archivos JavaScript para el formulario
         wp_register_script('formulario_editar_js', plugin_dir_url(__FILE__) . 'assets/js/formulario_editar_finca.js', array('jquery'), '1.0', true);
         wp_enqueue_script('formulario_editar_js');
+        wp_register_style('estilo', plugin_dir_url(__FILE__) . 'css/estilo.css');
+        wp_enqueue_style('estilo');
     }else{
         echo "No existe el archivo";
     }

@@ -1,0 +1,25 @@
+body{
+    font-family:'Roboto Mono'; 
+    font-style: normal;
+}
+#mapa {
+    width: 50%;
+    height: 50vh;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family:'Roboto Mono'; 
+    font-style: normal;
+}
+
+.fila1 {
+
+    background-color: #EBF5FB;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.fila2 {
+    background-color: #F4ECF7;
+    margin-top: 10px;
+    margin-left: 10px;
+}

@@ -22,6 +22,8 @@ function incluir_formulario()
         include $ruta_archivo;
         wp_register_script('formulario_js', plugin_dir_url(__FILE__) . 'assets/js/formulario.js', array('jquery'), '1.0', true);
         wp_enqueue_script('formulario_js');
+        wp_register_style('estilo', plugin_dir_url(__FILE__) . 'assets/css/estilo.css');
+        wp_enqueue_style('estilo');
     }
 
 }
@@ -35,6 +37,8 @@ function incluir_listado()
         wp_register_script('listado_iniciativas_js', plugin_dir_url(__FILE__) . 'assets/js/listado_iniciativas.js', array('jquery'), '1.0', true);
         wp_enqueue_script('listado_iniciativas_js');
         include $listado_visualizar;
+        wp_register_style('estilo', plugin_dir_url(__FILE__) . 'assets/css/estilo.css');
+        wp_enqueue_style('estilo');
     }
 }
 
@@ -46,6 +50,8 @@ function mostrar_iniciativa()
     //   var_dump($ruta_archivo_ver_inicitiva);
     if (file_exists($ruta_archivo_ver_inicitiva)) {
         include $ruta_archivo_ver_inicitiva;
+        wp_register_style('estilo', plugin_dir_url(__FILE__) . 'assets/css/estilo.css');
+        wp_enqueue_style('estilo');
     } else {
         echo "No existe el archivo";
     }
@@ -62,6 +68,8 @@ function editar_iniciativa(){
         // Agregamos los archivos JavaScript para el formulario
         wp_register_script('formulario_editar_js', plugin_dir_url(__FILE__) . 'assets/js/formulario.editar.js', array('jquery'), '1.0', true);
         wp_enqueue_script('formulario_editar_js');
+        wp_register_style('estilo', plugin_dir_url(__FILE__) . 'assets/css/estilo.css');
+        wp_enqueue_style('estilo');
     }else{
         echo "No existe el archivo";
     }

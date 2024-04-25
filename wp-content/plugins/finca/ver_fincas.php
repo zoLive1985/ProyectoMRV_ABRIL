@@ -17,27 +17,6 @@
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <!-- estilo mapa -->
     <!--  <link rel="stylesheet" href="./mapa.css"> -->
-    <style>
-        #mapa {
-            width: 50%;
-            height: 50vh;
-            margin-top: 10px;
-            margin-left: 10px;
-        }
-
-        .fila1 {
-
-            background-color: #EBF5FB;
-            margin-top: 10px;
-            margin-left: 10px;
-        }
-
-        .fila2 {
-            background-color: #F4ECF7;
-            margin-top: 10px;
-            margin-left: 10px;
-        }
-    </style>
 </head>
 
 <body class="container-fluid mt-3">
