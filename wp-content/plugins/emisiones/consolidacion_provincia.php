@@ -172,11 +172,14 @@
                 </div>
             </form>
         </div>
+        <div class="col-6">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-primary me-md-2" type="button">Consolidar</button>
+                
+            </div>
+        </div>
     </div>
 
-    <div class="form-group row mt-3">
-        <button class="btn btn-primary d-grid gap-2 col-3 mx-aut" type="button" id="consolidar" name="submit">Consolidar</button>
-    </div>
 </body>
 
 </html>

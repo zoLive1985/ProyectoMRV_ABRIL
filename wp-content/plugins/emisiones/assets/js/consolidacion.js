@@ -29,7 +29,7 @@ $(function () {
     }
     let apiUrl = `${window.location.origin}/esteveza/wp-json/iniciativas/v1/iniciativa_por_anio/${id_iniciativa}`;
     $("#selectanio").empty();
-
+   
     axios
       .get(apiUrl)
       .then((res) => {

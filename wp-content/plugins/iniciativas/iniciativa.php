@@ -198,7 +198,7 @@ function getAnio($request){
     $parametros = $request->get_params();
     $tabla_nombre ='emisiones';
     $valor_ini = $parametros['id_iniciativa'];
-    $registros = $wpdb->get_results("SELECT anio, estado FROM $tabla_nombre WHERE id_iniciativa ='$valor_ini' AND estado='CF' GROUP BY anio ORDER BY anio DESC",ARRAY_A);
+    $registros = $wpdb->get_results("SELECT anio, estado FROM $tabla_nombre WHERE id_iniciativa ='$valor_ini' AND estado='CF' GROUP BY anio ORDER BY anio ASC",ARRAY_A);
     $reponse = new WP_REST_Response($registros);
     // var_dump($reponse);
     return $reponse;
