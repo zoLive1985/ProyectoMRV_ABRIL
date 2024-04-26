@@ -49,7 +49,7 @@ $(function () {
     }
     
   });
-  $("#elemento").on("keypress", function (event) {
+ /*  $("#elemento").on("keypress", function (event) {
     var regex = new RegExp("^[a-zA-ZáéíóúÁÉÍÓÚÑñ0-9.,()]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
@@ -57,7 +57,7 @@ $(function () {
        return false;
     }
     
-  });
+  }); */
   $("#objetivo_desarrollo").select2({
     theme: "bootstrap-5",
     width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
@@ -73,7 +73,7 @@ $(function () {
     modeloPrueba.escenario = $("#escenario").val();
     modeloPrueba.linea_accion = $("#linea_accion").val();
     modeloPrueba.componente = $("#componente").val();
-    modeloPrueba.elemento = $("#elemento").val();
+   // modeloPrueba.elemento = $("#elemento").val();
     modeloPrueba.objetivo_desarrollo = $("#objetivo_desarrollo").val();
    // console.log($("#objetivo_desarrollo").val());
     modeloPrueba.sector = $("#sector").val();
@@ -149,10 +149,10 @@ function leerArchivo(evento) {
     iniciativa.escenario = columnas[5];
     iniciativa.linea_accion = columnas[6];
     iniciativa.componente = columnas[7];
-    iniciativa.elemento = columnas[8];
-    iniciativa.objetivo_desarrollo = columnas[9];
-    iniciativa.sector = columnas[10];
-    iniciativa.estado = columnas[11];
+   // iniciativa.elemento = columnas[8];
+    iniciativa.objetivo_desarrollo = columnas[8];
+    iniciativa.sector = columnas[9];
+    iniciativa.estado = columnas[10];
     iniciativas.push(iniciativa);
   });
   cargarDatos(iniciativas); 

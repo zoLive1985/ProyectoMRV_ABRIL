@@ -74,7 +74,7 @@
             <div class="col fila2">
                 <label for=""><strong>Meta Anual</strong></label>
                 <p>
-                    <?php echo number_format($iniciativa['meta_anual'], 2, ',', '.') ?> 
+                    <?php echo number_format($iniciativa['meta_anual'], 2, ',', '.') ?>
                     <span>Gg CO2 eq</span>
                 </p>
             </div>
@@ -99,12 +99,13 @@
 
         </div>
         <div class="row">
-            <div class="col fila3">
+
+            <!--  <div class="col fila3">
                 <label for=""><strong>Elemento</strong></label>
                 <p>
-                    <?php echo $iniciativa['elemento'] ?>
+                    <?php /* echo $iniciativa['elemento'] */ ?>
                 </p>
-            </div>
+            </div> -->
             <div class="col fila3">
                 <label for=""><strong>Vinculación de Iniciativa con los ODS</strong></label>
                 <p>
@@ -146,6 +147,9 @@
                 <p>
                     <?php echo $iniciativa['fecha_registro'] ?>
                 </p>
+            </div>
+            <div class="col ">
+
             </div>
         </div>
 

@@ -26,7 +26,7 @@ $(function () {
         objeto.escenario = $("#escenario").val() ;
         objeto.linea_accion = $("#linea_accion").val() ;
         objeto.componente = $("#componente").val();
-        objeto.elemento = $("#elemento").val();
+      //  objeto.elemento = $("#elemento").val();
         objeto.objetivo_desarrollo = $("#objetivo_desarrollo").val();
         objeto.sector = $("#sector").val();
         objeto.estado = $("#estado").val();

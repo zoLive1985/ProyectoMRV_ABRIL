@@ -7,7 +7,6 @@ CREATE TABLE iniciativas(
     `escenario` tinyint(1),
     `linea_accion` varchar(512),
     `componente`varchar(512),
-    `elemento`varchar(512), 
     `objetivo_desarrollo` varchar(512),
     `sector`varchar(32),
     `estado` BOOLEAN DEFAULT TRUE,

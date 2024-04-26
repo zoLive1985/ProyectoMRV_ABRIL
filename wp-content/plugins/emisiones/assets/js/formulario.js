@@ -11,8 +11,13 @@ $(function () {
 
 
     $("#metano_enterica").on("change", function () {
-        console.log("Metano enterica:",$(this).val());
+        //console.log("Metano enterica:",$(this).val());
+        let valor = $("#metano_enterica").val();
+        console.log('Valor original: ',valor);
+        valor = valor.replace('.','');
+        console.log('Valor sin puntos: ',valor);
         let metano_enterica = parseFloat($("#metano_enterica").val());
+        //console.log(metano_enterica);
         let metano_excretas = parseFloat($("#metano_excretas").val());
         let N2O_excretas = parseFloat($("#N20_excretas").val());
         let N2O_pasturas = parseFloat($("#N20_pasturas").val());

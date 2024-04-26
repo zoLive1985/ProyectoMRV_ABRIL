@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
     $escenario = ($_POST['escenario']);
     $linea_accion = ($_POST['linea_accion']);
     $componente = ($_POST['componente']);
-    $elemento = ($_POST['elemento']);
+   // $elemento = ($_POST['elemento']);
     $objetivo_desarrollo = isset($_POST['objetivo_desarrollo']) ? implode(',', $_POST['objetivo_desarrollo']) : '';
     $sector =($_POST['sector']);
     $estado = ($_POST['estado']);
@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
         'escenario' => $escenario,
         'linea_accion' => $linea_accion,
         'componente' => $componente,
-        'elemento' => $elemento,
+       // 'elemento' => $elemento,
         'objetivo_desarrollo' => $objetivo_desarrollo,
         'sector' => $sector,
         'fecha_registro' => $currentDate

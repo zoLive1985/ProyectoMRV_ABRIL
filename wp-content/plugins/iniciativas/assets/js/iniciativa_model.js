@@ -8,7 +8,7 @@ class IniciativaModel {
     escenario = '';
     linea_accion = '';
     componente = '';
-    elemento = '';
+   // elemento = '';
     objetivo_desarrollo = '';
     sector = '';
     estado = true;

@@ -64,6 +64,11 @@ $(function () {
     $("#consolidacion tbody tr").remove();
     $("#consolidacion tfoot tr").remove();
   });
+  $("#btnconsolidar").on("click", function () {
+    //alert("Hola");
+
+    
+  });
   var datosFiltrados = [];
   $("#buscar").on("click", function (event) {
     $("#consolidacion tbody tr").remove();

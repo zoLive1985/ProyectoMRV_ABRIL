@@ -174,7 +174,7 @@
         </div>
         <div class="col-6">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-primary me-md-2" type="button">Consolidar</button>
+                <button class="btn btn-primary me-md-2" type="button" id="btnconsolidar">Consolidar</button>
                 
             </div>
         </div>

@@ -117,13 +117,13 @@
                                                         name="componente" required>
                                         </div>
                                 </div>
-                                <div class="form form-group row">
+                                <!-- <div class="form form-group row">
                                         <label for="elemento" class="control-label"><strong>Elemento</strong></label>
                                         <div class="col">
                                                 <input type="text" class="form-control" id="elemento" name="elemento"
                                                         required>
                                         </div>
-                                </div>
+                                </div> -->
                                 <div class="form form-group row">
                                         <label for="objetivo_desarrollo" class="control-label"><strong>Vinculación de
                                                         Iniciativa con los ODS</strong></label>
