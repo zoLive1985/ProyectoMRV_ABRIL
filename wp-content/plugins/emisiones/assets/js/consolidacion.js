@@ -29,7 +29,7 @@ $(function () {
     }
     let apiUrl = `${window.location.origin}/esteveza/wp-json/iniciativas/v1/iniciativa_por_anio/${id_iniciativa}`;
     $("#selectanio").empty();
-   
+
     axios
       .get(apiUrl)
       .then((res) => {
@@ -66,8 +66,23 @@ $(function () {
   });
   $("#btnconsolidar").on("click", function () {
     //alert("Hola");
-
-    
+    Swal.fire({
+      title: "¡Esta seguro que desea relizar la consolidación?",
+      text: "Esta acción no se puede deshacer!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Aceptar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Los registros han sido consolidados",
+          text: "",
+          icon: "success",
+        });
+      }
+    });
   });
   var datosFiltrados = [];
   $("#buscar").on("click", function (event) {
@@ -75,8 +90,8 @@ $(function () {
     $("#consolidacion tfoot tr").remove();
     let nombre_iniciativa = $("#coniniciativa").val();
     let anio = $("#selectanio").val();
-    if ( anio == 'null') {
-        return;
+    if (anio == "null") {
+      return;
     }
     Swal.fire({
       title: "Consultando",
@@ -87,7 +102,7 @@ $(function () {
         Swal.showLoading();
       },
     });
-    
+
     //  obtenerbuscar.total_emisiones = $("#total_emisiones").val();
     let apiUrl = `${window.location.origin}/esteveza/wp-json/mrv/v1/searchconsolidar/${nombre_iniciativa}/${anio}`;
     axios
@@ -119,12 +134,22 @@ $(function () {
           });
           let sumaTotal = "<tr>";
           sumaTotal += `<td ><strong>Total</strong></td>`;
-          sumaTotal += `<td ><strong> </strong></td>`;  
-          sumaTotal += `<td ><strong>${sumaMetanoEnterica.toFixed(2).replace(/\./g, ",")}</strong></td>`;
-          sumaTotal += `<td ><strong>${sumaMetanoExcretas.toFixed(2).replace(/\./g, ",")}</strong></td>`;
-          sumaTotal += `<td ><strong>${sumaN2OExcretas.toFixed(2).replace(/\./g, ",")}</strong></td>`;
-          sumaTotal += `<td><strong>${sumaN2OPasturas.toFixed(2).replace(/\./g, ",")}</strong></td>`;
-          sumaTotal += `<td><strong>${sumaTotalEmisiones.toFixed(2).replace(/\./g, ",")}</strong></td>`;
+          sumaTotal += `<td ><strong> </strong></td>`;
+          sumaTotal += `<td ><strong>${sumaMetanoEnterica
+            .toFixed(2)
+            .replace(/\./g, ",")}</strong></td>`;
+          sumaTotal += `<td ><strong>${sumaMetanoExcretas
+            .toFixed(2)
+            .replace(/\./g, ",")}</strong></td>`;
+          sumaTotal += `<td ><strong>${sumaN2OExcretas
+            .toFixed(2)
+            .replace(/\./g, ",")}</strong></td>`;
+          sumaTotal += `<td><strong>${sumaN2OPasturas
+            .toFixed(2)
+            .replace(/\./g, ",")}</strong></td>`;
+          sumaTotal += `<td><strong>${sumaTotalEmisiones
+            .toFixed(2)
+            .replace(/\./g, ",")}</strong></td>`;
           sumaTotal += "</tr>";
           $("#consolidacion tfoot").append(sumaTotal);
           //  console.log(sumaTotal);

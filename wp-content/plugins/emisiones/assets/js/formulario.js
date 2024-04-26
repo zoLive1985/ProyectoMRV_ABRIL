@@ -1,9 +1,9 @@
 "use strict";
 $(function () {
-    $('#metano_enterica,#metano_excretas,#N20_excretas,#N20_pasturas').maskNumber({
+  /*   $('#metano_enterica,#metano_excretas,#N20_excretas,#N20_pasturas').maskNumber({
       decimal:',',
       thousands:'.'
-    });
+    }); */
     //metano_enterica
     //metano_excretas
     //N20_excretas
@@ -12,10 +12,10 @@ $(function () {
 
     $("#metano_enterica").on("change", function () {
         //console.log("Metano enterica:",$(this).val());
-        let valor = $("#metano_enterica").val();
+   /*      let valor = $("#metano_enterica").val();
         console.log('Valor original: ',valor);
         valor = valor.replace('.','');
-        console.log('Valor sin puntos: ',valor);
+        console.log('Valor sin puntos: ',valor); */
         let metano_enterica = parseFloat($("#metano_enterica").val());
         //console.log(metano_enterica);
         let metano_excretas = parseFloat($("#metano_excretas").val());

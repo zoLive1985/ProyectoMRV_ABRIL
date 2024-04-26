@@ -24,9 +24,9 @@ function incluir_emisiones()
         wp_register_style('estilo', plugin_dir_url(__FILE__) . 'assets/css/estilo.css');
         wp_enqueue_style('estilo');
         //mascara para el ingreso de numeros
-        wp_register_script('mascara_numeros_js', plugin_dir_url(__FILE__) . 'assets/js/jquery.masknumber.js');
+       /*  wp_register_script('mascara_numeros_js', plugin_dir_url(__FILE__) . 'assets/js/jquery.masknumber.js');
         wp_enqueue_script('mascara_numeros_js');
-
+ */
 
 
     }
@@ -200,6 +200,11 @@ function registrar_rutas_rest_emi()
         'methods' => 'GET',
         'callback' => 'contarRegistros'
     ]);
+    //consolidar
+    register_rest_route('consolidar/v1','consolidaremisiones/(?P<iniciativa>[\d]+)/(?P<anio>[a-zA-Z0-9]+)',[
+        'methods' => 'GET',
+        'callback' => 'getConsolidaremisiones'
+    ]);
 }
 add_action('rest_api_init', 'registrar_rutas_rest_emi');
 
@@ -320,10 +325,26 @@ function searchConsolidar($request)
     if (count($where) > 0) {
         $condicion = implode(" AND ", $where);
     }
-    $sql = "SELECT finca,anio,metano_enterica,metano_excretas,N2O_excretas,N2O_pasturas,total_emisiones,  estado FROM $tabla_nombre";
+    /*
+    SELECT anio, SUM(metano_enterica) AS total_metano_enterica
+FROM tu_tabla
+GROUP BY anio;
+    */
+    $sql = '';
+    if ($parametros['anio'] == 'todos') {
+        $sql = "SELECT GROUP_CONCAT(finca SEPARATOR ', ') AS finca,anio,SUM(metano_enterica) as metano_enterica,SUM(metano_excretas) as metano_excretas,
+        SUM(N2O_excretas) as N2O_excretas,SUM(N2O_pasturas) as N2O_pasturas ,SUM(total_emisiones) as total_emisiones,  estado FROM $tabla_nombre";
+    } else {
+        $sql = "SELECT finca,anio,metano_enterica,metano_excretas,N2O_excretas,N2O_pasturas,total_emisiones, estado FROM $tabla_nombre";
+
+    }
     if (strlen($condicion) > 0) {
         $sql .= ' WHERE ' . $condicion;
     }
+    if ($parametros['anio'] == 'todos') {
+        $sql .= ' GROUP BY anio ';
+    }
+    $sql .= ' ORDER BY anio ASC ';
     $consulta = $wpdb->get_results($sql, ARRAY_A);
     if (!$consulta) {
         return new WP_REST_Response("Error: No se encontro emisiones", 404);
@@ -332,6 +353,20 @@ function searchConsolidar($request)
     }
 
 }
+//Consolidar
+function getConsolidaremisiones($request){
+    global $wpdb;
+    $parametros = $request -> get_paraments();
+    $tabla_nombre ='emisiones';
+    $condiciones =[];
+    $condiciones['estado'] ='CF';
+    $condiciones[]
+    $sql = "SELECT finca,anio,metano_enterica,metano_excretas,N2O_excretas,N2O_pasturas,total_emisiones, estado FROM $tabla_nombre";
+
+    $formato = array('%s', '%s');
+
+}
+
 /**
  * Método que aprueba una emisión
  */

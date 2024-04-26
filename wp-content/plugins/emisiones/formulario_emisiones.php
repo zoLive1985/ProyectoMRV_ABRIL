@@ -122,7 +122,7 @@
                                                         Enterica</strong></label>
                                         <div class="col">
                                                 <div class="input-group" style="width: 520px;">
-                                                        <input type="text" class="form-control" id="metano_enterica"
+                                                        <input type="number" class="form-control" id="metano_enterica"
                                                                 name="metano_enterica" required value="0" >
                                                         <span class="unidades" style="margin-left: 5px; "><strong>t
                                                                         CO2eq</strong>
@@ -137,7 +137,7 @@
                                         </label>
                                         <div class="col">
                                                 <div class="input-group" style="width: 520px;">
-                                                        <input type="text" class="form-control" id="metano_excretas"
+                                                        <input type="number" class="form-control" id="metano_excretas"
                                                                 name="metano_excretas" required value="0">
                                                         <span class="unidades" style="margin-left: 5px; "><strong>t
                                                                         CO2eq</strong>
@@ -150,7 +150,7 @@
                                                         Excretas</strong></label>
                                         <div class="col">
                                                 <div class="input-group" style="width: 520px;">
-                                                        <input type="text" class="form-control" id="N20_excretas"
+                                                        <input type="number" class="form-control" id="N20_excretas"
                                                                 name="N20_excretas" value="0" required>
                                                         <span class="unidades" style="margin-left: 5px; "><strong>t
                                                                         CO2eq</strong>
@@ -163,7 +163,7 @@
                                                         Pasturas</strong></label>
                                         <div class="col">
                                                 <div class="input-group" style="width: 520px;">
-                                                        <input type="text" class="form-control" id="N20_pasturas"
+                                                        <input type="number" class="form-control" id="N20_pasturas"
                                                                 name="N20_pasturas" required value="0">
                                                         <span class="unidades" style="margin-left: 5px; "><strong>t
                                                                         CO2eq</strong>
@@ -176,7 +176,7 @@
                                                         Emisiones</strong></label>
                                         <div class="col">
                                                 <div class="input-group" style="width: 520px;">
-                                                        <input type="text" class="form-control" id="total_emisiones"
+                                                        <input type="number" class="form-control" id="total_emisiones"
                                                                 name="total_emisiones" required readonly value="0.0">
                                                         <span class="unidades" style="margin-left: 5px; "><strong>t
                                                                         CO2eq</strong>
