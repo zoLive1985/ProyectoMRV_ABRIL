@@ -360,7 +360,7 @@ function getConsolidaremisiones($request){
     $tabla_nombre ='emisiones';
     $condiciones =[];
     $condiciones['estado'] ='CF';
-    $condiciones[]
+    
     $sql = "SELECT finca,anio,metano_enterica,metano_excretas,N2O_excretas,N2O_pasturas,total_emisiones, estado FROM $tabla_nombre";
 
     $formato = array('%s', '%s');
