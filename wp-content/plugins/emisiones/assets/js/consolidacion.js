@@ -59,14 +59,18 @@ $(function () {
   });
   $("#reset").on("click", function (e) {
     $("#ndc").val("");
-    $("#coniniciativa").empty();
-    $("#selectanio").empty();
+    $("#coniniciativa").val("null");
+    $("#selectanio").val("null");
     $("#consolidacion tbody tr").remove();
     $("#consolidacion tfoot tr").remove();
   });
+
   $("#btnconsolidar").on("click", function () {
     //alert("Hola");
-   /*  Swal.fire({
+    let id_iniciativa = $("#coniniciativa").val();
+    let anio = $("#selectanio").val();
+
+    Swal.fire({
       title: "¡Esta seguro que desea relizar la consolidación?",
       text: "Esta acción no se puede deshacer!",
       icon: "warning",
@@ -76,18 +80,29 @@ $(function () {
       confirmButtonText: "Aceptar",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: "Los registros han sido consolidados",
-          text: "",
-          icon: "success",
-        });
+        let ApiUrl = `${window.location.origin}/esteveza/wp-json/mrv/v1/consolidartodos/${id_iniciativa}/${anio}`;
+        console.log(ApiUrl);
+        axios
+          .post(ApiUrl, {})
+          .then((res) => {
+            Swal.fire({
+              title: "Los registros han sido consolidados",
+              text: res.data,
+              icon: "success",
+            }).then();
+            $("#consolidacion tbody tr").remove();
+            $("#consolidacion tfoot tr").remove();
+          })
+          .catch((error) => {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "No existe registros para consolidar!",
+            });
+          });
       }
-    });*/
-    
-
-    let ApiUrl = `${window.location.origin}/esteveza/wp-json/mrv/v1/consolidartodos/`;
-    console.log(ApiUrl);
-  }); 
+    });
+  });
 
   var datosFiltrados = [];
   $("#buscar").on("click", function (event) {

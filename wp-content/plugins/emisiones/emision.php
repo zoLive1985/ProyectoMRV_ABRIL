@@ -178,10 +178,10 @@ function registrar_rutas_rest_emi()
 
     register_rest_route(
         'mrv/v1',
-        'consolidartodos/(?P<id_iniciativa>[\d]+)/(?P<anio>[a-zA-Z0-9]+)',
+        'consolidarTodos/(?P<id_iniciativa>[\d]+)/(?P<anio>[a-zA-Z0-9]+)',
         array(
-            'methods' =>'GET',
-            'callback' => 'getconsolidarTodos'
+            'methods' => 'POST',
+            'callback' => 'consolidarTodos'
         )
     );
 
@@ -363,26 +363,33 @@ GROUP BY anio;
 
 }
 //Consolidar
-function getconsolidarTodos($request){
+function consolidarTodos($request){
     global $wpdb;
     $parametros = $request->get_params();
+   // var_dump($parametros);
     $tabla_nombre ='emisiones';
     
     $condiciones = [];
     $condiciones['estado']= 'CF';
     $condiciones['id_iniciativa'] = $parametros['id_iniciativa'];
-    if($parametros['anio'] != 'todos'){
-        $condiciones[] = "anio = '" . $parametros['anio'] . "'";
+    if($parametros['anio'] == 'todos'){
+
+    } else {
+        $condiciones['anio'] = $parametros['anio'];
     }
- 
     $registros = $wpdb->update(
         $tabla_nombre,
         ['estado' => 'CL'],
         $condiciones
     );
 
-    $response = new WP_REST_Response($registros);
-    return $response;
+    if ($registros == false) {
+        $response = new WP_REST_Response("Error al actualizar el registro:", 400);
+        return $response;
+    } else {
+        $response = new WP_REST_Response("Registro actualizado exitosamente");
+        return $response;
+    }
 }
 
 /**
