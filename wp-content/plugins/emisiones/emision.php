@@ -24,9 +24,9 @@ function incluir_emisiones()
         wp_register_style('estilo', plugin_dir_url(__FILE__) . 'assets/css/estilo.css');
         wp_enqueue_style('estilo');
         //mascara para el ingreso de numeros
-       /*  wp_register_script('mascara_numeros_js', plugin_dir_url(__FILE__) . 'assets/js/jquery.masknumber.js');
-        wp_enqueue_script('mascara_numeros_js');
- */
+        /*  wp_register_script('mascara_numeros_js', plugin_dir_url(__FILE__) . 'assets/js/jquery.masknumber.js');
+         wp_enqueue_script('mascara_numeros_js');
+  */
 
 
     }
@@ -97,13 +97,17 @@ add_shortcode('alias_consolidar', 'consolidar_emisiones');
 
 function reporte()
 {
-    $ruta_archivo_reporte = plugin_dir_path(__FILE__) . 'reporte.php';
-    if (file_exists($ruta_archivo_reporte)) {
-        include $ruta_archivo_reporte;
+    $ruta_gestionar_reporte = plugin_dir_path(__FILE__) . 'gestion_reporte.php';
+    if (file_exists($ruta_gestionar_reporte)) {
+        wp_register_script('gestionar_reporte_js',plugin_dir_url(__FILE__) . 'assets/js/gestion_reporte.js', array('jquery'), '1.0',true);
+        wp_enqueue_script('gestionar_reporte_js');
+        include $ruta_gestionar_reporte;
+        wp_register_style('estilo', plugin_dir_url(__FILE__) . 'assets/css/estilo.css');
+        wp_enqueue_style('estilo');
     }
 
 }
-add_shortcode('alias_reporte', 'reporte');
+add_shortcode('aliasgestionar_reporte', 'reporte');
 
 
 function shortcode_pagina_incluida_emisiones()
@@ -174,6 +178,16 @@ function registrar_rutas_rest_emi()
             'callback' => 'searchConsolidar'
         )
     );
+    //emisiones ya consolidadas para reporte
+    register_rest_route(
+        'mrv/v1',
+        'reporteconsolidadas/(?P<iniciativa>[\d]+)',
+        array(
+            'methods' => 'GET',
+            'callback' => 'reporteConsolidadas'
+        )
+    );
+
     //consolidar todos enviar
 
     register_rest_route(
@@ -213,7 +227,7 @@ function registrar_rutas_rest_emi()
         'callback' => 'contarRegistros'
     ]);
 
-    
+
 }
 add_action('rest_api_init', 'registrar_rutas_rest_emi');
 
@@ -362,17 +376,50 @@ GROUP BY anio;
     }
 
 }
-//Consolidar
-function consolidarTodos($request){
+//Resporte consolidados
+function reporteConsolidadas($request)
+{
     global $wpdb;
     $parametros = $request->get_params();
-   // var_dump($parametros);
-    $tabla_nombre ='emisiones';
+    //var_dump($parametros);
+    $tabla_nombre = 'emisiones';
+    $where = [];
+    $condicion = '';
+    array_push($where, "id_iniciativa = '" . $parametros['iniciativa'] . "'");
+    array_push($where, "estado='CL'");
+    if (count($where) > 0) {
+        $condicion = implode(" AND ", $where);
+    }
+    $sql = "SELECT anio,SUM(metano_enterica) as metano_enterica,SUM(metano_excretas) as metano_excretas,
+    SUM(N2O_excretas) as N2O_excretas,SUM(N2O_pasturas) as N2O_pasturas ,SUM(total_emisiones) as total_emisiones,  estado FROM $tabla_nombre";
+
+    if (strlen($condicion) > 0) {
+        $sql .= ' WHERE ' . $condicion;
+    }
+    $sql .= ' GROUP BY anio ';
+    $sql .= ' ORDER BY anio ASC ';
     
+    $consulta = $wpdb->get_results($sql, ARRAY_A);
+    if (!$consulta) {
+        return new WP_REST_Response("Error: No se encontro emisiones", 404);
+    } else {
+        return new WP_REST_Response($consulta, 200);
+    }
+}
+
+
+//Consolidar
+function consolidarTodos($request)
+{
+    global $wpdb;
+    $parametros = $request->get_params();
+    // var_dump($parametros);
+    $tabla_nombre = 'emisiones';
+
     $condiciones = [];
-    $condiciones['estado']= 'CF';
+    $condiciones['estado'] = 'CF';
     $condiciones['id_iniciativa'] = $parametros['id_iniciativa'];
-    if($parametros['anio'] == 'todos'){
+    if ($parametros['anio'] == 'todos') {
 
     } else {
         $condiciones['anio'] = $parametros['anio'];
@@ -387,7 +434,7 @@ function consolidarTodos($request){
         $response = new WP_REST_Response("Error al actualizar el registro:", 400);
         return $response;
     } else {
-        $response = new WP_REST_Response("Registro actualizado exitosamente");
+        $response = new WP_REST_Response("");
         return $response;
     }
 }
