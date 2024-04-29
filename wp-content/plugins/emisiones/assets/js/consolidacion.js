@@ -66,7 +66,7 @@ $(function () {
   });
   $("#btnconsolidar").on("click", function () {
     //alert("Hola");
-    Swal.fire({
+   /*  Swal.fire({
       title: "¡Esta seguro que desea relizar la consolidación?",
       text: "Esta acción no se puede deshacer!",
       icon: "warning",
@@ -82,8 +82,13 @@ $(function () {
           icon: "success",
         });
       }
-    });
-  });
+    });*/
+    
+
+    let ApiUrl = `${window.location.origin}/esteveza/wp-json/mrv/v1/consolidartodos/`;
+    console.log(ApiUrl);
+  }); 
+
   var datosFiltrados = [];
   $("#buscar").on("click", function (event) {
     $("#consolidacion tbody tr").remove();

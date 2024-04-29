@@ -174,6 +174,18 @@ function registrar_rutas_rest_emi()
             'callback' => 'searchConsolidar'
         )
     );
+    //consolidar todos enviar
+
+    register_rest_route(
+        'mrv/v1',
+        'consolidartodos/(?P<id_iniciativa>[\d]+)/(?P<anio>[a-zA-Z0-9]+)',
+        array(
+            'methods' =>'GET',
+            'callback' => 'getconsolidarTodos'
+        )
+    );
+
+
     register_rest_route('mrv/v1', '/aprobarEmision/(?P<id>[\d]+)', [
         'methods' => 'POST',
         'callback' => 'aprobarEmision'
@@ -200,11 +212,8 @@ function registrar_rutas_rest_emi()
         'methods' => 'GET',
         'callback' => 'contarRegistros'
     ]);
-    //consolidar
-    register_rest_route('consolidar/v1','consolidaremisiones/(?P<iniciativa>[\d]+)/(?P<anio>[a-zA-Z0-9]+)',[
-        'methods' => 'GET',
-        'callback' => 'getConsolidaremisiones'
-    ]);
+
+    
 }
 add_action('rest_api_init', 'registrar_rutas_rest_emi');
 
@@ -354,17 +363,26 @@ GROUP BY anio;
 
 }
 //Consolidar
-function getConsolidaremisiones($request){
+function getconsolidarTodos($request){
     global $wpdb;
-    $parametros = $request -> get_paraments();
+    $parametros = $request->get_params();
     $tabla_nombre ='emisiones';
-    $condiciones =[];
-    $condiciones['estado'] ='CF';
     
-    $sql = "SELECT finca,anio,metano_enterica,metano_excretas,N2O_excretas,N2O_pasturas,total_emisiones, estado FROM $tabla_nombre";
+    $condiciones = [];
+    $condiciones['estado']= 'CF';
+    $condiciones['id_iniciativa'] = $parametros['id_iniciativa'];
+    if($parametros['anio'] != 'todos'){
+        $condiciones[] = "anio = '" . $parametros['anio'] . "'";
+    }
+ 
+    $registros = $wpdb->update(
+        $tabla_nombre,
+        ['estado' => 'CL'],
+        $condiciones
+    );
 
-    $formato = array('%s', '%s');
-
+    $response = new WP_REST_Response($registros);
+    return $response;
 }
 
 /**
