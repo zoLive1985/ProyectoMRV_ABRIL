@@ -112,7 +112,7 @@
                     <?php
                     $arregloObjetivos = ($iniciativa['objetivo_desarrollo'] == "") ? [] : json_decode($iniciativa['objetivo_desarrollo']);
                     if (count($arregloObjetivos) == 0) {
-                        echo 'No hay dana';
+                        echo 'No tiene registrado los ODS';
                     } else {
                         foreach ($arregloObjetivos as $objetivo) {
                             if ($objetivo == 1) {
@@ -121,14 +121,45 @@
                             if ($objetivo == 2) {
                                 echo '2. Hambre cero<br/>';
                             }
+                            if ($objetivo == 3) {
+                                echo '3. Salud<br/>';
+                            }
+                            if ($objetivo == 4) {
+                                echo '4. Educación de calidad<br/>';
+                            }
+                           
                             if ($objetivo == 5) {
                                 echo '5. Igualdad de género<br/>';
+                            }
+                            if ($objetivo == 6) {
+                                echo '6. Agua limpia y Saneamiento<br/>';
+                            }
+                            if ($objetivo == 7) {
+                                echo '7. Energía Asequible y no contaminante<br/>';
+                            }
+                            if ($objetivo == 8) {
+                                echo '8. Trabajo decente y Crecimiento Económico<br/>';
+                            }
+                            if ($objetivo == 9) {
+                                echo '9. Industria Innovación e Infraestructura<br/>';
+                            }
+                            if ($objetivo == 10) {
+                                echo '10. Reducción de las Desigualdades<br/>';
+                            }
+                            if ($objetivo == 11) {
+                                echo '11. Cuidades y Comunidades Sostenibles<br/>';
                             }
                             if ($objetivo == 12) {
                                 echo '12. Garantizar modalidades de consumo y producción sostenibles.<br/>';
                             }
                             if ($objetivo == 13) {
                                 echo '13. Adoptar medidas urgentes para combatir el cambio climático y sus efectos.<br/>';
+                            }
+                            if ($objetivo == 14) {
+                                echo '14. Vida Submarina.<br/>';
+                            }
+                            if ($objetivo == 15) {
+                                echo '15. Paz, Justicia e Instituciones Sólidas.<br/>';
                             }
                         }
                     }

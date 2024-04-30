@@ -16,6 +16,9 @@ $(function () {
     placeholder: $( this ).data( 'placeholder' ),
     closeOnSelect: false,
   });
+  
+
+
     $("#actualizar").on("click", function () {
         let objeto = new IniciativaModel();
         objeto.id = $("#id").val(); 
