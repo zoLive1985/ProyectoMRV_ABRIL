@@ -396,6 +396,7 @@ function reporteConsolidadas($request)
     if (strlen($condicion) > 0) {
         $sql .= ' WHERE ' . $condicion;
     }
+
     $sql .= ' GROUP BY anio ';
     $sql .= ' ORDER BY anio ASC ';
     

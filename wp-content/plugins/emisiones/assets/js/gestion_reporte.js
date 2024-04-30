@@ -1,31 +1,63 @@
 "use strict";
-$(function(){
-    $("#ndc").on("change", function () {
-        let ndc = $(this).val();
-    
-        let apiUrl = `${window.location.origin}/esteveza/wp-json/iniciativas/v1/iniciativa/${ndc}`;
-        $("#coniniciativa").empty();
-        $("#coniniciativa").append(
-          `<option value='null' selected>Seleccione una iniciativas</option>`
-        );
-        axios.get(apiUrl).then((res) => {
-          if (res.statusText === "OK") {
-            res?.data?.forEach((item) => {
-              $("#coniniciativa").append(
-                `<option value='${item.id}'>${item.nombre}</option>`
-              );
-            });
-          }
+$(function () {
+  let nombreIniciativaSeleccionada ="";
+  //let aniosSeleccionados ="";
+
+  $("#ndc").on("change", function () {
+    let ndc = $(this).val();
+
+    let apiUrl = `${window.location.origin}/esteveza/wp-json/iniciativas/v1/iniciativa/${ndc}`;
+    $("#coniniciativa").empty();
+    $("#coniniciativa").append(
+      `<option value='null' selected>Seleccione una iniciativas</option>`
+    );
+    axios.get(apiUrl).then((res) => {
+      if (res.statusText === "OK") {
+        res?.data?.forEach((item) => {
+          console.log(res.data);
+          $("#coniniciativa").append(
+            `<option value='${item.id}'>${item.nombre}</option>`
+          );
         });
-      });
-      $("#reset").on("click", function (e) {
-        $("#ndc").val("");
-        $("#coniniciativa").val("null");
-        $("#consolidacion tbody tr").remove();
-        $("#consolidacion tfoot tr").remove();
-      });
-      
-      var datosFiltrados = [];
+        
+      }
+    });
+  });
+  $("#coniniciativa").on("change", function () {
+    // Almacena el nombre de la iniciativa seleccionada
+    nombreIniciativaSeleccionada = $(this).find("option:selected").text();
+});
+
+  $("#reset").on("click", function (e) {
+    $("#ndc").val("");
+    $("#coniniciativa").val("null");
+    $("#consolidacion tbody tr").remove();
+    $("#consolidacion tfoot tr").remove();
+  });
+
+  $("#btnreporte").on("click", async function (e) {
+    const { value: file } = await Swal.fire({
+      title: `${nombreIniciativaSeleccionada} - Años:`,
+      input: "file",
+      inputAttributes: {
+        "accept": "image/*",
+        "aria-label": "Upload your profile picture"
+      }
+    });
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        Swal.fire({
+          title: "Your uploaded picture",
+          imageUrl: e.target.result,
+          imageAlt: "The uploaded picture"
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  var datosFiltrados = [];
   $("#buscar").on("click", function (event) {
     $("#consolidacion tbody tr").remove();
     $("#consolidacion tfoot tr").remove();
@@ -45,6 +77,7 @@ $(function(){
       .get(apiUrl)
       .then((res) => {
         if (res.statusText === "OK") {
+          
           let sumaMetanoEnterica = 0;
           let sumaMetanoExcretas = 0;
           let sumaN2OExcretas = 0;
@@ -87,16 +120,16 @@ $(function(){
           sumaTotal += "</tr>";
           $("#consolidacion tfoot").append(sumaTotal);
           //  console.log(sumaTotal);
+          
         }
         Swal.close();
       })
       .catch((err) => {
-        Swal.close();
-        console.error(err);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "No tiene años consolidados!",
+        });
       });
   });
-
-
-
-      
-})
+});
