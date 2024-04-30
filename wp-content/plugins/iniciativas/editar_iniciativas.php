@@ -135,27 +135,86 @@
                                                 <label for="objetivo_desarrollo" class="control-label"><strong>Vinculación de la
                                                                 iniciativacon los ODS</strong></label>
                                                 <div class="col">
+                                                        <?php 
+                                                          $arregloObjetivos = ($iniciativa['objetivo_desarrollo'] == "") ? [] : json_decode($iniciativa['objetivo_desarrollo']);
+                                                        ?>
                                                         <select class="form-select form-select-sm mb-3"
                                                                 name="objetivo_desarrollo" id="objetivo_desarrollo"
                                                                 data-placeholder="Escoja los objetivos" multiple>
-                                                                <option value="1" <?php echo ($iniciativa["objetivo_desarrollo"] == 1) ? 'selected' : '' ?>>1. Fin de la pobreza</option>
-                                                                <option value="2" <?php echo ($iniciativa["objetivo_desarrollo"] == 2) ? 'selected' : '' ?>>2. Hambre cero</option>
-                                                                <option value="3" <?php echo ($iniciativa["objetivo_desarrollo"] == 3) ? 'selected' : '' ?>>3. Salud</option>
-                                                                <option value="4" <?php echo ($iniciativa["objetivo_desarrollo"] == 4) ? 'selected' : '' ?>>4. Educación de calidad</option>
-                                                                <option value="5" <?php echo ($iniciativa["objetivo_desarrollo"] == 5) ? 'selected' : '' ?>>5. Igualdad de género</option>
-                                                                <option value="6" <?php echo ($iniciativa["objetivo_desarrollo"] == 6) ? 'selected' : '' ?>>6. Agua limpia y Saneamiento</option>
-                                                                <option value="7" <?php echo ($iniciativa["objetivo_desarrollo"] == 7) ? 'selected' : '' ?>>7. Energía Asequible y no contaminante</option>
-                                                                <option value="8" <?php echo ($iniciativa["objetivo_desarrollo"] == 8) ? 'selected' : '' ?>>8. Trabajo decente y Crecimiento Económico
+                                                                <option value="1" <?php echo  ($iniciativa["objetivo_desarrollo"] == 1) ? 'selected' : '' ?>>1. Fin de la pobreza</option>
+                                                                <option value="2" <?php echo (in_array(2,$arregloObjetivos)) ? 'selected' : '' ?>>2. Hambre cero</option>
+                                                                <option value="3" <?php echo (in_array(3,$arregloObjetivos)) ? 'selected' : '' ?>>3. Salud</option>
+                                                                <option value="4" <?php echo (in_array(4,$arregloObjetivos)) ? 'selected' : '' ?>>4. Educación de calidad</option>
+                                                                <option value="5" <?php echo (in_array(5,$arregloObjetivos)) ? 'selected' : '' ?>>5. Igualdad de género</option>
+                                                                <option value="6" <?php echo (in_array(6,$arregloObjetivos)) ? 'selected' : '' ?>>6. Agua limpia y Saneamiento</option>
+                                                                <option value="7" <?php echo (in_array(7,$arregloObjetivos))? 'selected' : '' ?>>7. Energía Asequible y no contaminante</option>
+                                                                <option value="8" <?php echo (in_array(8,$arregloObjetivos)) ? 'selected' : '' ?>>8. Trabajo decente y Crecimiento Económico
                                                                 </option>
-                                                                <option value="9" <?php echo ($iniciativa["objetivo_desarrollo"] == 9) ? 'selected' : '' ?>>9. Industria Innovación e Infraestructura</option>
-                                                                <option value="10" <?php echo ($iniciativa["objetivo_desarrollo"] == 10) ? 'selected' : '' ?>>10. Reducción de las Desigualdades</option>
-                                                                <option value="11" <?php echo ($iniciativa["objetivo_desarrollo"] == 11) ? 'selected' : '' ?>>11. Cuidades y Comunidades Sostenibles</option>
-                                                                <option value="12" <?php echo ($iniciativa["objetivo_desarrollo"] == 12) ? 'selected' : '' ?>>12. Producción y Consumo Responsable.</option>
-                                                                <option value="13" <?php echo ($iniciativa["objetivo_desarrollo"] == 13) ? 'selected' : '' ?>>13. Acción por el clima</option>
-                                                                <option value="14" <?php echo ($iniciativa["objetivo_desarrollo"] == 14) ? 'selected' : '' ?>>14. Vida Submarina</option>
-                                                                <option value="15" <?php echo ($iniciativa["objetivo_desarrollo"] == 15) ? 'selected' : '' ?>>15. Paz, Justicia e Instituciones Sólidas</option>
-                                                        </select>
+                                                                <option value="9" <?php echo (in_array(9,$arregloObjetivos)) ? 'selected' : '' ?>>9. Industria Innovación e Infraestructura</option>
+                                                                <option value="10" <?php echo (in_array(10,$arregloObjetivos)) ? 'selected' : '' ?>>10. Reducción de las Desigualdades</option>
+                                                                <option value="11" <?php echo (in_array(11,$arregloObjetivos)) ? 'selected' : '' ?>>11. Cuidades y Comunidades Sostenibles</option>
+                                                                <option value="12" <?php echo (in_array(12,$arregloObjetivos)) ? 'selected' : '' ?>>12. Producción y Consumo Responsable.</option>
+                                                                <option value="13" <?php echo (in_array(13,$arregloObjetivos)) ? 'selected' : '' ?>>13. Acción por el clima</option>
+                                                                <option value="14" <?php echo (in_array(14,$arregloObjetivos)) ? 'selected' : '' ?>>14. Vida Submarina</option>
+                                                                <option value="15" <?php echo (in_array(15,$arregloObjetivos)) ? 'selected' : '' ?>>15. Paz, Justicia e Instituciones Sólidas</option>
+                                                        </select> 
+                                                        <?php
+                                                       /*  $arregloObjetivos = ($iniciativa['objetivo_desarrollo'] == "") ? [] : json_decode($iniciativa['objetivo_desarrollo']);
+                                                        if (count($arregloObjetivos) == 0) {
+                                                            echo 'No tiene registrado los ODS';
+                                                        } else {
+                                                            foreach ($arregloObjetivos as $objetivo) {
+                                                                if ($objetivo == 1) {
+                                                                    echo '1. Fin de la pobreza<br/>';
+                                                                }
+                                                                if ($objetivo == 2) {
+                                                                    echo '2. Hambre cero<br/>';
+                                                                }
+                                                                if ($objetivo == 3) {
+                                                                    echo '3. Salud<br/>';
+                                                                }
+                                                                if ($objetivo == 4) {
+                                                                    echo '4. Educación de calidad<br/>';
+                                                                }
+                                                               
+                                                                if ($objetivo == 5) {
+                                                                    echo '5. Igualdad de género<br/>';
+                                                                }
+                                                                if ($objetivo == 6) {
+                                                                    echo '6. Agua limpia y Saneamiento<br/>';
+                                                                }
+                                                                if ($objetivo == 7) {
+                                                                    echo '7. Energía Asequible y no contaminante<br/>';
+                                                                }
+                                                                if ($objetivo == 8) {
+                                                                    echo '8. Trabajo decente y Crecimiento Económico<br/>';
+                                                                }
+                                                                if ($objetivo == 9) {
+                                                                    echo '9. Industria Innovación e Infraestructura<br/>';
+                                                                }
+                                                                if ($objetivo == 10) {
+                                                                    echo '10. Reducción de las Desigualdades<br/>';
+                                                                }
+                                                                if ($objetivo == 11) {
+                                                                    echo '11. Cuidades y Comunidades Sostenibles<br/>';
+                                                                }
+                                                                if ($objetivo == 12) {
+                                                                    echo '12. Garantizar modalidades de consumo y producción sostenibles.<br/>';
+                                                                }
+                                                                if ($objetivo == 13) {
+                                                                    echo '13. Adoptar medidas urgentes para combatir el cambio climático y sus efectos.<br/>';
+                                                                }
+                                                                if ($objetivo == 14) {
+                                                                    echo '14. Vida Submarina.<br/>';
+                                                                }
+                                                                if ($objetivo == 15) {
+                                                                    echo '15. Paz, Justicia e Instituciones Sólidas.<br/>';
+                                                                }
+                                                            }
+                                                        } */
+                                                        ?> 
                                                 </div>
+                                                
                                         </div>
                                         <div class="form form-group row">
                                                 <?php

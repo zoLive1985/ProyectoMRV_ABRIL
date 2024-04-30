@@ -247,7 +247,9 @@ function EditIniciativas($request){
         return new WP_REST_Response("Error: No se encontró la iniciativa", 404);
     }
     $formato = array('%s', '%s');
+    
     $datos["objetivo_desarrollo"]=json_encode($datos["objetivo_desarrollo"]);
+    
     $resultado = $wpdb->update(
         $tabla_nombre,
         $datos,

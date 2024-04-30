@@ -1,5 +1,7 @@
 "use strict";
 $(function () { 
+ 
+
   $("#linea_accion, #componente, #nombre").on("keypress", function(event) {
     var regex = new RegExp("^[a-zA-ZáéíóúÁÉÍÓÚÑñ0-9.,()\\s]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -8,6 +10,7 @@ $(function () {
         return false;
     }
 });
+
 
 
   $("#objetivo_desarrollo").select2({
