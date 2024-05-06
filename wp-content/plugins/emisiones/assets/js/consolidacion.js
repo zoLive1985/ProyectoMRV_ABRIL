@@ -85,6 +85,10 @@ $(function () {
         axios
           .post(ApiUrl, {})
           .then((res) => {
+            /* var pdf = new jsPDF('l','mm','a4');
+            pdf.text(20,20,'Consolidación Anual');
+ */
+
             Swal.fire({
               title: "Los registros han sido consolidados",
               text: res.data,

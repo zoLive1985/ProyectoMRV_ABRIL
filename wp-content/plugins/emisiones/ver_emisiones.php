@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col">
             <center>
-                <h1>PROCESO DE VERIFICACIÓN</h1>
+                <h1>EMISIONES VERIFICACIÓN</h1>
             </center>
         </div>
     </div>
@@ -63,7 +63,9 @@
                 </p>
             </div>
             <div class="col fila1">
-                <label for=""><strong>Metano Fermentación Entérica</strong></label>
+                <label for=""><strong>Metano (CH4)</strong></label>
+                <br>
+                <label for=""><strong>Fermentación Entérica</strong></label>
                 <br>
                 <label for=""><strong>t CO2eq</strong></label>
                 <p>
@@ -73,7 +75,9 @@
         </div>
         <div class="row">
             <div class="col fila2">
-                <label for=""><strong>Metano Manejo Excretas</strong></label>
+                <label for=""><strong>Metano (CH4)</strong></label>
+                <br>
+                <label for=""><strong>Manejo Excretas</strong></label>
                 <br>
                 <label for=""><strong>t CO2eq</strong></label>
                 <p>
@@ -81,7 +85,9 @@
                 </p>
             </div>
             <div class="col fila2">
-                <label for=""><strong>N2O Manejo Excretas</strong></label>
+                <label for=""><strong>Óxido Nitroso (N2O)</strong></label>
+                <br>
+                <label for=""><strong>Manejo Excretas</strong></label>
                 <br>
                 <label for=""><strong>t CO2eq</strong></label>
                 <p>
@@ -89,7 +95,9 @@
                 </p>
             </div>
             <div class="col fila2">
-                <label for=""><strong>N2O Excretas en Pasturas</strong></label>
+                <label for=""><strong>Óxido Nitros (N2O) </strong></label>
+                <br>
+                <label for=""><strong>Excretas en Pasturas</strong></label>
                 <br>
                 <label for=""><strong>t CO2eq</strong></label>
                 <p>

@@ -1,6 +1,6 @@
 "use strict";
 $(function () {
-  let nombreIniciativaSeleccionada ="";
+ // let nombreIniciativaSeleccionada ="";
   //let aniosSeleccionados ="";
 
   $("#ndc").on("change", function () {
@@ -25,7 +25,7 @@ $(function () {
   });
   $("#coniniciativa").on("change", function () {
     // Almacena el nombre de la iniciativa seleccionada
-    nombreIniciativaSeleccionada = $(this).find("option:selected").text();
+//    nombreIniciativaSeleccionada = $(this).find("option:selected").text();
 });
 
   $("#reset").on("click", function (e) {
@@ -37,12 +37,14 @@ $(function () {
 
   $("#btnreporte").on("click", async function (e) {
     const { value: file } = await Swal.fire({
-      title: `${nombreIniciativaSeleccionada} - Años:`,
+      //title: `${nombreIniciativaSeleccionada} - Años:`,
+      title :"Subir memorando u oficio",
       input: "file",
       inputAttributes: {
         "accept": "image/*",
         "aria-label": "Upload your profile picture"
-      }
+      },
+      showCancelButton: true,
     });
     if (file) {
       const reader = new FileReader();

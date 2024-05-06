@@ -15,6 +15,11 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- link para generar el pdf -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.2/jspdf.plugin.autotable.min.js"></script>
+    
     <title>Consolidacion por Provincias y años</title>
 
 </head>
@@ -119,22 +124,34 @@
                 <tr>
                     <th scope="col" style="text-align: center; vertical-align: middle;">Codigo Finca</th>
                     <th scope="col" style="text-align: center; vertical-align: middle;">Año</th>
-                    <th scope="col" style="text-align: center; vertical-align: middle;">Metano Fermentación Entérica
+                    <th scope="col" style="text-align: center; vertical-align: middle;">Metano (CH4)
+                    <div>
+                        Fermentación Entérica
+                    </div>
                         <div>
                             <p>tCO2 eq</p>
                         </div>
                     </th>
-                    <th scope="col" style="text-align: center; vertical-align: middle;">Metano Manejo Excretas
+                    <th scope="col" style="text-align: center; vertical-align: middle;">Metano (CH4)
+                    <div>
+                        Manejo Excretas
+                    </div>
                         <div>
                             <p>tCO2 eq</p>
                         </div>
                     </th>
-                    <th scope="col" style="text-align: center; vertical-align: middle;">N2O Manejo Excretas
+                    <th scope="col" style="text-align: center; vertical-align: middle;">Óxido Nitroso (N2O) 
+                    <div>
+                        Manejo Excretas
+                    </div>
                         <div>
                             <p>tCO2 eq</p>
                         </div>
                     </th>
-                    <th scope="col" style="text-align: center; vertical-align: middle;">N2O Excretas en Pasturas
+                    <th scope="col" style="text-align: center; vertical-align: middle;">Óxido Nitroso (N2O) 
+                    <div>
+                        Excretas en Pasturas
+                    </div>
                         <p>tCO2 eq</p>
                     </th>
                     <th scope="col" style="text-align: center; vertical-align: middle;">Total de emisiones <div> t CO2eq

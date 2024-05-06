@@ -119,19 +119,19 @@
     <br>
 
     <div class="row ">
-        <table class="table table-hover mt-3" id="listado"  style="text-align: center; vertical-align: middle;">
+        <table class="table table-hover mt-4" id="listado"  style="text-align: center; vertical-align: middle;">
             <thead>
                 <tr>
                     <th scope="col"  style="text-align: center; vertical-align: middle;">N°</th>
                     <th scope="col"  style="text-align: center; vertical-align: middle;">Año</th>
                     <th scope="col"  style="text-align: center; vertical-align: middle;">Código de la Finca</th>
-                    <th scope="col" style="text-align: center;">Metano Fermentación Entérica <div>t CO2eq</div>
+                    <th scope="col" style="text-align: center;">Metano(CH4) <div>Fermentación Entérica</div> <div>t CO2eq</div><br>
                     </th>
-                    <th scope="col" style="text-align: center; vertical-align: middle;" >Metano Manejo Excretas <div>t CO2eq</div>
+                    <th scope="col" style="text-align: center; vertical-align: middle;" >Metano(CH4) <div>Manejo Excretas</div> <div>t CO2eq</div><br>
                     </th>
-                    <th scope="col" style="text-align: center; vertical-align: middle;">N2O Manejo Excretas <div>t CO2eq</div>
+                    <th scope="col" style="text-align: center; vertical-align: middle;">Óxido Nitroso(N2O ) <div>Manejo Excretas</div>  <div>t CO2eq</div>
                     </th>
-                    <th scope="col" style="text-align: center; vertical-align: middle;">N2O Excretas en Pasturas <div>t CO2eq</div>
+                    <th scope="col" style="text-align: center; vertical-align: middle;">Óxido Nitroso(N2O ) <div>Excretas en Pasturas </div> <div>t CO2eq</div>
                     </th>
                     <th scope="col" style="text-align: center; vertical-align: middle;">Total de emisiones <div>t CO2eq</div></th>
                     <th scope="col" style="text-align: center; vertical-align: middle;">Estado</th>
