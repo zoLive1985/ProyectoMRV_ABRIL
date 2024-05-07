@@ -177,8 +177,14 @@ add_action('rest_api_init', 'registrar_rutas_rest');
 function getIniciativas($request)
 {
     global $wpdb;
+    /*$infoUser = wp_get_current_user();
+    $perfil = reset($infoUser->roles);*/
     $tabla_nombre = 'iniciativas';
     $registros = $wpdb->get_results("SELECT * FROM $tabla_nombre", ARRAY_A);
+    /*$registros = array_map(function($item) use($infoUser){
+        $item['perfil'] = $infoUser;
+        return $item;
+    },$registros);*/
     $response = new WP_REST_Response($registros);
     return $response;
 }

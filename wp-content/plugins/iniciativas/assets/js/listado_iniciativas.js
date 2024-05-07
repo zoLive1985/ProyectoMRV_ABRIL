@@ -1,7 +1,7 @@
 "use strict";
 /*Funcion para mostrar datos en la tabla*/
 $(function () {
-  consultarIniciativas();
+  //consultarIniciativas();
 });
 
 // Consultamos las iniciativas
