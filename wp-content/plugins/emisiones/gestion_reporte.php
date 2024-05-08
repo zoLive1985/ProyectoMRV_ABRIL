@@ -138,7 +138,7 @@
         </div>
         <div class="col-6">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-primary me-md-2" type="button" id="btnreporte">Generar Reporte</button>
+                <button class="btn btn-primary me-md-2" type="button" id="btnreporte">Cargar información</button>
     
             </div>
         </div>

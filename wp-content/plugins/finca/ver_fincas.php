@@ -122,13 +122,13 @@
                 <label for=""><strong>Longitud</strong></label>
                 <input type="hidden" name="longitud" id="longitud" value="<?php echo $finca['geopoint_longitude'] ?>">
                 <p>
-                    <?php echo number_format($finca['geopoint_longitude'], 10, ',', '.') ?>
+                    <?php echo number_format($finca['geopoint_longitude'], 10, ',', '') ?>
                 </p>
             </div>
             <div class="col fila1">
                 <label for=""><strong>Altitud</strong></label>
                 <p>
-                    <?php echo number_format($finca['geopoint_altitude'], 10, ',', '.') ?>
+                    <?php echo number_format($finca['geopoint_altitude'], 10, ',', '') ?>
                 </p>
             </div>
         </div>
@@ -136,25 +136,25 @@
             <div class="col fila2">
                 <label for=""><strong>Exactitud Geográfica</strong></label>
                 <p>
-                    <?php echo number_format($finca['geopoint_precision'], 10, ',', '.') ?>
+                    <?php echo number_format($finca['geopoint_precision'], 10, ',', '') ?>
                 </p>
             </div>
             <div class="col fila2">
                 <label for=""><strong>Coordenada en X</strong></label>
                 <p>
-                    <?php echo (number_format($finca['info_coordenadaX'], 10, ',', '.')) ?>
+                    <?php echo (number_format($finca['info_coordenadaX'], 10, ',', '')) ?>
                 </p>
             </div>
             <div class="col fila2">
                 <label for=""><strong>Coordenada en Y</strong></label>
                 <p>
-                    <?php echo ($finca['info_coordenadaY']) ?>
+                    <?php echo (number_format($finca['info_coordenadaY'],10,',',''))?>
                 </p>
             </div>
             <div class="col fila2">
                 <label for=""><strong>Datos de Elevación</strong></label>
                 <p>
-                    <?php echo ($finca['info_altitud']) ?>
+                    <?php echo (number_format($finca['info_altitud'],10,',','')) ?>
                 </p>
             </div>
         </div>
