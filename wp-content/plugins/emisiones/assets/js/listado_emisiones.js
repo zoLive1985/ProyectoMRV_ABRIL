@@ -1,7 +1,7 @@
 "use strict";
 
 $(function () {
-  consultarEmisiones();
+ // consultarEmisiones();
   consultarFincas();
   $(document).on("click", "#validar", function (event) {
     let identificador = $(this).data("id");

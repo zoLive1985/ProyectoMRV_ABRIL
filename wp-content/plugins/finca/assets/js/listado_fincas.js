@@ -1,6 +1,6 @@
 "use strict";
 $(function () {
-  consultarFincas();
+ // consultarFincas();
 });
 
 function consultarFincas() {
