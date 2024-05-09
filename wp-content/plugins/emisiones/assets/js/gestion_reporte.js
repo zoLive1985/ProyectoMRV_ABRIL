@@ -3,6 +3,15 @@ $(function () {
  // let nombreIniciativaSeleccionada ="";
   //let aniosSeleccionados ="";
 
+  $(".buscar_tooltip").tooltip({
+    title: 'Buscar', 
+    placement:'top'
+  });
+  $(".reset_tooltip").tooltip({
+    title: 'Reset', 
+    placement:'top'
+  });
+
   $("#ndc").on("change", function () {
     let ndc = $(this).val();
 

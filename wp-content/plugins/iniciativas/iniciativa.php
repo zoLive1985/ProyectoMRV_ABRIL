@@ -22,8 +22,6 @@ function incluir_formulario()
         include $ruta_archivo;
         wp_register_script('formulario_js', plugin_dir_url(__FILE__) . 'assets/js/formulario.js', array('jquery'), '1.0', true);
         wp_enqueue_script('formulario_js');
-        /*  wp_register_script('script_botones',plugin_dir_url(__FILE__) .'assets/js/botones.js');
-         wp_enqueue_script('script_botones'); */
         wp_register_style('estilo', plugin_dir_url(__FILE__) . 'assets/css/estilo.css');
         wp_enqueue_style('estilo');
     }

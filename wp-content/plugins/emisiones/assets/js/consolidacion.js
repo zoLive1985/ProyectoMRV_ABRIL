@@ -1,5 +1,22 @@
 "use strict";
 $(function () {
+  $(".buscar_tooltip").tooltip({
+    title: 'Buscar', 
+    placement:'top'
+  });
+  $(".reset_tooltip").tooltip({
+    title: 'Reset', 
+    placement:'top'
+  });
+/*   $(".regresar_tooltip").tooltip({
+    title: 'Regresar', 
+    placement:'right'
+  }); */
+  $(".reset_tooltip").tooltip({
+    title: 'Reset', 
+    placement:'top'
+  });
+
   $("#ndc").on("change", function () {
     let ndc = $(this).val();
     // alert (ndc);

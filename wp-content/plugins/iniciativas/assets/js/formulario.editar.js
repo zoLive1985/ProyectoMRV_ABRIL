@@ -1,6 +1,14 @@
 "use strict";
 $(function () { 
  
+  $(".actualizar_tooltip").tooltip({
+    title: 'Guardar cambios', 
+    placement:'right'
+  });
+  $(".regresar_tooltip").tooltip({
+    title: 'Regresar', 
+    placement:'right'
+  });
 
   $("#linea_accion, #componente, #nombre").on("keypress", function(event) {
     var regex = new RegExp("^[a-zA-ZáéíóúÁÉÍÓÚÑñ0-9.,()\\s]+$");

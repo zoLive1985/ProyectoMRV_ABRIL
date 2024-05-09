@@ -9,6 +9,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  enlace Pooper -->
+    <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.1"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.5"></script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
@@ -94,7 +98,7 @@
                         </div>
                         <div class="col">
                             <!--Boton buscar-->
-                            <button class="btn" id="buscar">
+                            <button class="btn buscar_tooltip" id="buscar">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="#3FACF5"
                                     class="bi bi-search" viewBox="0 0 16 16">
                                     <path
@@ -102,7 +106,7 @@
                                 </svg>
                             </button>
                             <!--Boton reset-->
-                            <button class="btn" id="reset">
+                            <button class="btn reset_tooltip" id="reset">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="red"
                                     class="bi bi-bootstrap-reboot" viewBox="0 0 16 16">
                                     <path
@@ -176,9 +180,9 @@
     </div>
     <div class="row">
         <div class="col-6">
-            <form action="form-horizontal">
+           <!--  <form action="form-horizontal">
                 <div class="form-group row mt-3 ">
-                    <a class="btn d-grid gap-2 col-3 mx-aut" href="http://localhost/esteveza/gestionar_emisiones/"
+                    <a class="btn regresar_tooltip d-grid gap-2 col-3 mx-aut" href="http://localhost/esteveza/gestionar_emisiones/"
                         role="button" id="regresar">
                         <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="gray"
                             class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
@@ -187,7 +191,7 @@
                         </svg>
                     </a>
                 </div>
-            </form>
+            </form> -->
         </div>
 
         <div class="col-6">

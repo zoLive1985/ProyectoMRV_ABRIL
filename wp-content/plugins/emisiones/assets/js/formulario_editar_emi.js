@@ -1,5 +1,14 @@
 "use strict";
 $(function(){
+
+  $(".actualiza_tooltip").tooltip({
+    title: 'Guardar cambios', 
+    placement:'right'
+  });
+  $(".regresar_tooltip").tooltip({
+    title: 'regresar', 
+    placement:'right'
+  });
       $("#metano_enterica").on("change", function () {
 
         let metano_enterica = parseFloat($("#metano_enterica").val());

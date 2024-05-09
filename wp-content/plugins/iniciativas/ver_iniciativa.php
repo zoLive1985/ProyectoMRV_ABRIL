@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Ver Inicitiva</title>
+    <!--  enlace Pooper -->
+    <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.5"></script>
     <!--link rel="stylesheet" href="./estilo.css"-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -20,7 +23,7 @@
         <div class="col-6">
             <form action="form-horizontal">
                 <div class="form-group row mt-3 ">
-                    <a class="btn d-grid gap-2 col-3 mx-aut" href="http://localhost/esteveza/gestionar-iniciativa/"
+                    <a class="btn d-grid gap-2 col-3 mx-aut regresar_tooltip" href="http://localhost/esteveza/gestionar-iniciativa/"
                         role="button" id="regresar"><svg xmlns="http://www.w3.org/2000/svg" width="42" height="42"
                             fill="gray" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
                             <path

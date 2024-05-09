@@ -3,7 +3,10 @@ $(function () {
   //alert('Hola');
   //modeloPrueba.codigo='COD-001';
   //console.log(modeloPrueba);
-  
+  $(".guardar_tooltip").tooltip({
+    title: 'Guardar', 
+    placement:'right'
+  });
   $("#codigo").on("keypress", function(event){
     var regex = new RegExp("^[a-zA-ZáéíóúÁÉÍÓÚÑñ0-9.,()\\s ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);

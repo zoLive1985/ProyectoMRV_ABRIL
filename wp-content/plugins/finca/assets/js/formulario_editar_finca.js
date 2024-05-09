@@ -1,5 +1,13 @@
 "use strict";
 $(function(){
+  $(".actualizar_tooltip").tooltip({
+    title: 'Guardar cambios', 
+    placement:'right'
+  });
+  $(".regresar_tooltip").tooltip({
+    title: 'Regresar', 
+    placement:'right'
+  });
   $("#codigo_finca, #canton, #parroquia, #nombre_propietario, #asociacion").on("keypress", function(event){
     var regex = new RegExp("^[a-zA-ZáéíóúÁÉÍÓÚÑñ0-9.,()\\s ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
