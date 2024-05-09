@@ -110,7 +110,7 @@
                                                 </div>
                                         </div>
                                         <div class="form form-group row">
-                                                <label for="metano_enterica" class="control-label"><strong>Metano Fermentación
+                                                <label for="metano_enterica" class="control-label"><strong>Metano (CH4) Fermentación
                                                                 Enterica</strong> </label>
                                                 <div class="col">
                                                         <div class="input-group" style="width: 520px;">
@@ -125,7 +125,7 @@
 
                                         </div>
                                         <div class="form form-group row">
-                                                <label for="metano_excretas" class="control-label"> <strong> Metano Manejo
+                                                <label for="metano_excretas" class="control-label"> <strong> Metano (CH4) Manejo
                                                                 Excretas </strong></label>
                                                 <div class="col">
                                                         <div class="input-group" style="width: 520px;">
@@ -139,7 +139,7 @@
                                                 </div>
                                         </div>
                                         <div class="form form-group row">
-                                                <label for="N20_excretas" class="control-label"> <strong>N2O Manejo
+                                                <label for="N20_excretas" class="control-label"> <strong>Óxido Nitroso (N2O) Manejo
                                                                 Excretas</strong> </label>
                                                 <div class="col">
                                                         <div class="input-group" style="width: 520px;">
@@ -153,7 +153,7 @@
                                                 </div>
                                         </div>
                                         <div class="form form-group row">
-                                                <label for="N20_pasturas" class="control-label"><strong>N2O Excretas en
+                                                <label for="N20_pasturas" class="control-label"><strong>Óxido Nitroso (N2O) Excretas en
                                                                 Pasturas</strong></label>
                                                 <div class="col">
                                                         <div class="input-group" style="width: 520px;">

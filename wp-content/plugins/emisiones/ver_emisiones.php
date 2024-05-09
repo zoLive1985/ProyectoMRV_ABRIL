@@ -95,7 +95,7 @@
                 </p>
             </div>
             <div class="col fila2">
-                <label for=""><strong>Óxido Nitros (N2O) </strong></label>
+                <label for=""><strong>Óxido Nitroso (N2O) </strong></label>
                 <br>
                 <label for=""><strong>Excretas en Pasturas</strong></label>
                 <br>

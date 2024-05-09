@@ -109,7 +109,15 @@ function reporte()
 }
 add_shortcode('aliasgestionar_reporte', 'reporte');
 
+function gestionar_verificacion()
+{
+    $ruta_gestionar_verificacion = plugin_dir_path(__FILE__). 'gestionar_verificacion.php';
+    if(file_exists($ruta_gestionar_verificacion)){
+        include $ruta_gestionar_verificacion;
+    }
 
+}
+add_shortcode('alias_gesverificacion','gestionar_verificacion');
 function shortcode_pagina_incluida_emisiones()
 {
     ob_start(); // Captura la salida

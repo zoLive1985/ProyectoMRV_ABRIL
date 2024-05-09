@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" >
-    <title>Módulo de Reporte</title>
+    <meta name="viewport">
+    <title>Gestionar Verificación</title>
     <!--  enlace Pooper -->
     <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.5"></script>
@@ -22,8 +22,8 @@
     <div class="row">
         <div class="col">
             <center>
-               <!--  <h1>GESTIONAR REPORTE</h1> -->
-              <h1>GENERAR REPORTE</h>
+                <!--  <h1>GESTIONAR REPORTE</h1> -->
+                <h1>GESTIONAR VERIFICACIÓN</h>
             </center>
         </div>
     </div>
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <!--Consolidar Iniciativa-->
+                            <!--Gestionar verificación-->
                             <div class="form-floating mb-3">
                                 <select name="coniniciativa" id="coniniciativa" class="form-select">
                                     <option value="null">Seleccione la Iniciativa</option>
@@ -53,6 +53,17 @@
                                     ?>
                                 </select>
                                 <label for="coninciativa">Iniciativa</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-floating mb-3">
+                                <select name="selectanio" id="selectanio" class="form-select">
+                                    <option value="null">Seleccione el año</option>
+                                    <?php
+                                   
+                                    ?>
+                                </select>
+                                <label for="anio">Año</label>
                             </div>
                         </div>
                         <div class="col">
@@ -87,33 +98,33 @@
                 <tr>
                     <th scope="col" style="text-align: center; vertical-align: middle;">Año</th>
                     <th scope="col" style="text-align: center; vertical-align: middle;">Metano (CH4)
-                    <div>
-                        Fermentación Entérica
-                    </div>
+                        <div>
+                            Fermentación Entérica
+                        </div>
                         <div>
                             <p>tCO2 eq</p>
                         </div>
                     </th>
                     <th scope="col" style="text-align: center; vertical-align: middle;">Metano (CH4)
-                    <div>
-                        Manejo Excretas
-                    </div>
+                        <div>
+                            Manejo Excretas
+                        </div>
                         <div>
                             <p>tCO2 eq</p>
                         </div>
                     </th>
-                    <th scope="col" style="text-align: center; vertical-align: middle;">Óxido Nitroso (N2O) 
-                    <div>
-                        Manejo Excretas
-                    </div>
+                    <th scope="col" style="text-align: center; vertical-align: middle;">Óxido Nitroso (N2O)
+                        <div>
+                            Manejo Excretas
+                        </div>
                         <div>
                             <p>tCO2 eq</p>
                         </div>
                     </th>
-                    <th scope="col" style="text-align: center; vertical-align: middle;">Óxido Nitroso (N2O) 
-                    <div>
-                        Excretas en Pasturas
-                    </div>
+                    <th scope="col" style="text-align: center; vertical-align: middle;">Óxido Nitroso (N2O)
+                        <div>
+                            Excretas en Pasturas
+                        </div>
                         <p>tCO2 eq</p>
                     </th>
                     <th scope="col" style="text-align: center; vertical-align: middle;">Total de emisiones <div> t CO2eq
@@ -143,7 +154,7 @@
         <div class="col-6">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button class="btn btn-primary me-md-2" type="button" id="btnreporte">Cargar informe técnico</button>
-    
+
             </div>
         </div>
     </div>
